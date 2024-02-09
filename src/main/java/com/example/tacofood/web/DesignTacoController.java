@@ -73,13 +73,13 @@ public class DesignTacoController {
     public String proccessTaco(@Valid Taco taco, Errors errors,
                                @ModelAttribute TacoOrder tacoOrder){
         if(errors.hasErrors()){
-            return "redirect:/orders/current";
+            return "redirect:/";
         }
 
 
         tacoOrder.addTaco(taco);
         log.info("Processing taco:{}", taco);
-        return "radirect:/orders/current";
+        return "redirect:/orders/current";
     }
 
     private  Iterable filterByType(List<Ingredient> ingredients, Type type) {

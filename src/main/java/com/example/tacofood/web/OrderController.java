@@ -30,7 +30,6 @@ public class OrderController {
     @PostMapping
     public String proccessOrder(@Valid TacoOrder tacoOrder, Errors errors,
                                 SessionStatus sessionStatus){
-
         if(errors.hasErrors()){
             return "orderForm";
         }
